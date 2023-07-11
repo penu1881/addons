@@ -2,8 +2,6 @@ if SERVER then AddCSLuaFile() end
 
 HpwRewrite = HpwRewrite or { }
 
-HpwRewrite.Version = 10004
-HpwRewrite.VCheckLink = "https://raw.githubusercontent.com/Ayditor/HPW_Rewrite/master/info.txt"
 HpwRewrite.FavouriteSpells = HpwRewrite.FavouriteSpells or { }
 HpwRewrite.DebugInfo = HpwRewrite.DebugInfo or { }
 
@@ -679,3 +677,6 @@ end
 
 HpwRewrite.Loaded = true
 hook.Run("hpwrewrite_loaded")
+
+if SERVER then MsgC(Color(0, 200, 255), "Magic Wand Rewrite addon has been loaded!\n") end
+HpwRewrite:LogDebug("Magic Wand Rewrite addon has been loaded!")
