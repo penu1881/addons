@@ -1,9 +1,0 @@
-"SpriteCard"
-{
-	$BASETEXTURE "pfx/fire_basic_nocolor"
-	$ADDOVERBLEND 0
-	$POWERFUNCTION "[1.0 2.5 5]"
-	$EXTRACTGREENALPHA 1
-	$ADDSELF 0.1
-	$DEPTHBLEND 1
-}

@@ -1,7 +1,0 @@
-"SpriteCard" {
-    // a leaf! hehehehehehe :DDDDDD
-	"$basetexture" "env_leaf1"
-	"$alphatest" 1
-	"$nocull" "1"
-	"$surfaceprop" "nodecal"
-}

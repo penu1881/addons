@@ -1,8 +1,0 @@
-"UnlitGeneric"
-{
-	// Original shader: VertexLitTexture
-	"$basetexture" "models/weapons/pulsar/holographic"
-	"$additive" 1
-	"$model" 1
-}
-

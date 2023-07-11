@@ -1,7 +1,0 @@
-"UnlitGeneric" 
-{ 
-	"$basetexture"		"vgui/entities/pfx2_02_s" 
-	"$vertexcolor" 		1 
-	"$vertexalpha" 		1 
-	"$nolod" 			1 
-} 
