@@ -1,0 +1,56 @@
+"VertexLitGeneric"
+{
+	"$basetexture" 			"models/weapons/vapor/V_IRifle_core"
+	"$bumpmap" 			"models/weapons/vapor/core_normal"
+	"$surfaceprop" 			"glass"
+
+	"$selfillum" 			"1"
+
+
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmaptint" 			"[ 0.1 0.8 25 ]"
+	"$envmapconstrast"		"1"
+
+// Emissive Scroll Pass
+	"$emissiveBlendEnabled"     		"1"
+	"$emissiveBlendTexture"     		"models/vortigaunt/vortigaunt_illum"
+	"$emissiveBlendBaseTexture" 	"Models/Vortigaunt/vortigaunt_blue"
+	"$emissiveBlendFlowTexture" 	"models/vortigaunt/vortigaunt_flow"
+	"$emissiveBlendTint"        		"[255 255 255]" //"[1 1 1]"
+	"$emissiveBlendScrollVector" 		"[0.11 0.124]"
+	"$time" 				"1"
+
+//detail
+	"$detail" 				"models/props_combine/portalball001b_sheet"
+	"$detailblendmode" 		"1"
+	"$detailblendfactor" 		"1.0"
+	"$detailScale" 			"0.1"
+
+//phong values (expected "phong 1")
+	"$phong" 			"1"
+	"$phongexponent" 			"120"
+	"$phongboost"			"30"
+	"$phongfresnelranges"		"[.45 .90 .135]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"			"1"
+	"$rimlightexponent"			"1.2"
+	"$rimlightboost"			".3"
+	"$rimmask"			"1"
+
+//phong texture paths
+	"$phongwarptexture"  		"models/weapons/vapor/phnwarp"
+	"$phongexponenttexture" 		"models/weapons/vapor/v_irifle_phong"
+	"$lightwarptexture"			"models/weapons/vapor/lgtwarp"
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"textureScrollVar" "$detail"
+			"textureScrollRate" 0.5
+			"textureScrollAngle" 180.00
+		}
+	}
+}

@@ -1,0 +1,52 @@
+"VertexLitGeneric"
+{
+	$baseTexture 				"models/weapons/vapor/storm_core_baset"
+	$bumpmap 					"models/weapons/nio/2_bump"
+	$phongwarptexture			"models/weapons/vapor/phnwarp"
+//	$lightwarptexture			"models/weapons/vapor/lgtwarp"
+
+    $envmap 					"env_cubemap"
+    $normalmapalphaenvmapmask 	1
+	$envmaptint 				"[ .065 .07 .075  ]"
+	$envmapconstrast 			1
+	$envmapfresnel 				0.6
+
+	$surfaceprop 				"metal"
+	$nocull						0
+	$nodecal 					0
+	$halflambert 				1
+	
+	$selfillum					1
+	$selfillummask 				"models/weapons/vapor/storm_core_glow"
+	$selfillumtint 				"[ 0.7 1 12 ]"
+
+	$phong 						1
+	$phongboost 				24
+	$phongfresnelranges			"[ 0.5 0.01 0.05 ]"
+	$phongalbedotint 			1
+
+	$detail 					"models/weapons/misc/hexgrid_detail"
+	$detailblendmode 			4
+	$detailblendfactor 			0.6
+	$detailScale 				10
+
+	$emissiveBlendEnabled 		1
+	$emissiveBlendTexture		"models/weapons/misc/energy_static_noise"
+	$emissiveBlendBaseTexture	"models/weapons/vapor/storm_core_glow"
+	$emissiveBlendFlowTexture	"models/weapons/vapor/storm_core_flow"
+	$emissiveBlendTint 			"[ 1.2 1.4 64 ]"
+	$emissiveBlendStrength 		16
+	$emissiveBlendScrollVector 	"[ 0.4 -0.3 ]"
+
+	"Proxies"
+	{
+		"GaussianNoise"
+		{
+			"mean" 0.4
+			"halfWidth" 1.2
+			"minVal" 2
+			"maxVal" 8
+			"resultVar" $emissiveBlendStrength
+		}
+	}
+}

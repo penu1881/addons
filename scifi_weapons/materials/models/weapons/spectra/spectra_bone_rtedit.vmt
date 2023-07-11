@@ -1,0 +1,80 @@
+"VertexLitGeneric"
+{
+	$basetexture 				"models/weapons/spectra/spectra_bone_baset"
+	$bumpmap 					"models/weapons/spectra/spectra_bone_normal"	
+//	$normalmap 					"models/weapons/spectra/spectra_bone_normal"	
+	$phongexponenttexture 		"models/weapons/spectra/spectra_bone_phong"
+
+	$envmap 					"env_cubemap"
+	$normalmapalphaenvmapmask 	1
+	$envmaptint 				"[ 9 8 10 ]"
+	$envmapconstrast 			1
+	$surfaceprop 				"glass"
+
+	$selfillummask				"models/weapons/spectra/spectra_bone_glow"
+	$selfillum 					1
+	$selfillumtint				"[ 1 1 1 ]"
+	$selfillumfresnel			1
+	$selfillumfresnelminmaxexp	"[ 0.06 4 12 ]"
+
+	$nodecal 					1
+
+	$phong 						1
+	$phongboost					32
+	$phongfresnelranges			"[ 0.05 0.1 1.2 ]"
+	$phongalbedotint 			1
+
+	$rimlight					1
+	$rimlightexponent			.2
+	$rimlightboost				.017
+	$rimmask					1
+
+	$emissiveBlendEnabled 		1
+	$emissiveBlendTexture		"models/weapons/spectra/celest_glyph_noise"
+	$emissiveBlendBaseTexture	"models/weapons/spectra/spectra_bone_glow"
+	$emissiveBlendFlowTexture	"models/weapons/spectra/spectra_bone_flow"
+	$emissiveBlendTint 			"[ 1 1 1 ]"
+	$emissiveBlendStrength 		4
+	$emissiveBlendScrollVector 	"[ 0.2 0.6 ]"
+	
+	//appearently broken?
+	$ambientocclusion 			1
+	$ambientocclusiontexture 	"models/weapons/spectra/spectra_bone_phong"
+	$ambientocclusioncolor 		"[ 255 -255 255 ]"
+	$AmbientOcclTexture 		"models/weapons/spectra/spectra_bone_phong"
+	$AmbientOcclColor 			"[ 255 0 255 ]"
+	
+	//this is begging to be used as a dissolve effect. 
+	//or for the dark celestial assets. or both. Just think about Prey's Typhons and let your imagination flow...
+///
+///	$FleshInteriorEnabled      	1 												// Enables effect
+///	$FleshInteriorTexture      	"models/weapons/spectra/spectra_bone_glow" 		// Mask in alpha
+///	$FleshNormalTexture			"models/weapons/spectra/spectra_bone_normal"
+///	$FleshBorderTexture1D      	"models/weapons/spectra/celest_glyph_noise"
+///	$FleshInteriorNoiseTexture 	"engine/noise-blur-256x256"
+///	$FleshSubsurfaceTexture	 	"models/weapons/spectra/spectra_bone_glow"
+///	$FleshCubeTexture          	"env_cubemap"
+///	$FleshBorderNoiseScale     	1 												// Flesh Noise UV scalar for border
+///	$FleshBorderWidth			0.2 											// Width of flesh border
+///	$FleshBorderSoftness		0.5 											// Border softness must be greater than 0.0 and up tp 0.5
+///	$FleshBorderTint			"[.4 .5 1]"										// Tint / brighten the border 1D texture
+///	$FleshGlossBrightness		4.0 											// Change the brightness of the glossy layer
+///	$FleshDebugForceFleshOn	 	1 												// DEBUG: This will force on full flesh for testing
+///	$FleshScrollSpeed			1.0
+///
+	"Proxies"
+	{
+		"Equals"
+		{
+			"srcVar1" 		$selfillumtint
+			"resultVar" 	$emissiveBlendTint
+		}
+		
+		"Multiply"
+		{
+			"srcVar1" 		$emissiveBlendTint
+			"srcVar2"		$emissiveBlendStrength
+			"resultVar" 	$emissiveBlendTint
+		}
+	}
+}

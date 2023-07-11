@@ -1,0 +1,67 @@
+"VertexLitGeneric"
+{
+	$basetexture 				"models/weapons/spectra/spectra_bone_rotten_baset"
+	$bumpmap 					"models/weapons/spectra/spectra_bone_rotten_normal"	
+	$phongexponenttexture 		"models/weapons/spectra/spectra_bone_rotten_phong"
+
+	$envmap 					"env_cubemap"
+	$normalmapalphaenvmapmask 	1
+	$envmaptint 				"[ 0.3 0.22 0.2 ]"
+	$envmapconstrast 			1
+	$surfaceprop 				"glass"
+
+	$selfillummask				"models/weapons/spectra/spectra_bone_rotten_glow"
+	$selfillum 					1
+	$selfillumtint				"[ 4 1 0.2 ]"
+
+	$nodecal 					1
+
+	$phong 						1
+	$phongboost					64
+	$phongfresnelranges			"[ 0.05 0.1 1.2 ]"
+	$phongalbedotint 			1
+
+	$rimlight					1
+	$rimlightexponent			.2
+	$rimlightboost				.017
+	$rimmask					1
+
+	$emissiveBlendEnabled 		1
+	$emissiveBlendTexture		"models/weapons/spectra/celest_glyph_noise"
+	$emissiveBlendBaseTexture	"models/weapons/spectra/spectra_bone_rotten_glow"
+	$emissiveBlendFlowTexture	"models/weapons/spectra/spectra_bone_rotten_flow"
+	$emissiveBlendTint 			"[ 1 1 1 ]"
+	$emissiveBlendStrength 		12
+	$emissiveBlendScrollVector 	"[ 0.4 0.6 ]"
+
+	$FleshInteriorEnabled      	1
+	$FleshInteriorTexture      	"models/weapons/spectra/spectra_bone_rotten_interior"
+	$FleshNormalTexture			"shadertest/noise_normal"
+	$FleshBorderTexture1D      	"models/weapons/misc/energy_surf_tintmap_celestial"
+	$FleshInteriorNoiseTexture 	"engine/noise-blur-256x256"
+	$FleshSubsurfaceTexture	 	"models/weapons/spectra/spectra_bone_rotten_interior"
+	$FleshCubeTexture          	"env_cubemap"
+	$FleshBorderNoiseScale     	0.8
+	$FleshBorderWidth			0.6
+	$FleshBorderSoftness		2
+	$FleshBorderTint			"[ 0.1 0.02 0.03 ]"
+	$FleshGlossBrightness		0.04
+	$FleshDebugForceFleshOn	 	1
+	$FleshScrollSpeed			2.0
+
+	"Proxies"
+	{
+		"Equals"
+		{
+			"srcVar1" 		$selfillumtint
+			"resultVar" 	$emissiveBlendTint
+		}
+		
+		"Multiply"
+		{
+			"srcVar1" 		$emissiveBlendTint
+			"srcVar2"		$emissiveBlendStrength
+			"resultVar" 	$emissiveBlendTint
+		}
+	}
+}

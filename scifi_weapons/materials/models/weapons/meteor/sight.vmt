@@ -1,0 +1,25 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/props_combine/combine_window001"
+	"$bumpmap" "models/weapons/meteor/sight_bump"
+
+	"$envmap"			 "env_cubemap"
+	"$envmaptint" 			"[ .02 .02 .02 ]"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmapcontrast" 			"1"
+	"$surfaceprop" 			"metal"
+	"$halflambert" 			"1"
+	"$nodecal" 			"1"
+	"$model" 				"1"
+
+	"$phong"     			"1"
+	"$phongexponent" 			 "32.2"
+	"$phongboost"   			"2.4"
+//	"$basemapluminancephongmask" 	"1"
+	"$phongfresnelranges"  		 "[1 1.7 2.5]" 
+	"$phongalbedotint" 			"1"										
+
+	"$rimlight" 			"0" 
+	"$rimlightexponent" 			"15"
+	"$rimlightboost" 			".87"
+}

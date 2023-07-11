@@ -1,0 +1,44 @@
+"vertexlitgeneric"	//shader
+{
+//texture paths
+	"$basetexture" 			"models/weapons/moby/moby_barrel_baset"
+	"$bumpmap" 			"models/weapons/moby/moby_barrel_bump"
+
+//env values
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	1
+	"$envmaptint" 			"[ .065 .065 .065 ]"
+	"$envmapconstrast" 		1
+	"$surfaceprop" 			"metal"
+
+//illumination values
+	"$halflambert" 			1
+
+//misc. status
+	"$model" 				1
+	// "// $nocull"				1
+	"$nodecal" 			1
+	"$alphatest" 			1
+	"$translucent" 			1
+
+//phong values (expected "phong 1")
+	"$phong" 			"1"
+//	"$phongexponent" 			"120"
+	"$phongboost"			"2"
+	"$phongfresnelranges"		"[0.6 1.1 2.1]" //"[.45 .90 .135]"
+	"$phongalbedotint" 			"1"
+
+//phong texture paths
+	"$phongexponenttexture" 		"models/weapons/moby/moby_barrel_phong"
+
+//detail
+//	"$detail" 				"models/weapons/hwave/case_detail"
+//	"$detailblendmode" 		"2"
+//	"$detailblendfactor" 		"0.2"
+//	"$detailScale" 			"2.6"
+
+	"Proxies"
+	{
+	}
+}
+

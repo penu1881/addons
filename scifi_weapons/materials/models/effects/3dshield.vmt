@@ -1,0 +1,20 @@
+"Aftershock"
+{
+	$normalmap				"nature/water_outland_normal"
+
+	$colortint  			"[ 1 1 1.1 ]"
+
+	$SilhouetteColor		"[ 1 2 6 ]" 
+	$SilhouetteThickness	0.4
+	
+	$GroundMin				-1
+	$GroundMax				-1
+
+	$refractamount 			0.01
+	$bluramount 			0
+
+	$model 					1
+	$additive 				1
+	$nocull 				1
+	$nodecal 				1
+}

@@ -1,0 +1,6 @@
+SpriteCard 
+{
+	$additive 1
+
+    $basetexture "pfx/mex/mex_ex_1.vtf"
+}

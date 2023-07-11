@@ -1,0 +1,42 @@
+"VertexLitGeneric"
+{
+	$baseTexture 				"dev/hide"
+	$bumpmap 					"dev/flat_normal"
+
+	$surfaceprop 				"default_silent"
+	
+	$model 						1
+	$nodecal 					1
+	
+//	$alphatest 					1
+	$additive 					1
+	$translucent 				1
+	
+//	$vertexcolor 				1
+//	$vertexalpha 				1
+
+	$selfillumt 				1
+	$selfillumtint 				"[ 1.2 1.3 2 ]"
+
+	$FleshInteriorEnabled      	1
+	$FleshInteriorTexture		"models/weapons/misc/energy_surf_interior"
+	$FleshNormalTexture			"shadertest/noise_normal"
+	$FleshBorderTexture1D      	"models/weapons/misc/energy_surf_tintmap_celestial"
+	$FleshInteriorNoiseTexture 	"engine/noise-blur-256x256"
+	$FleshSubsurfaceTexture	 	"models/weapons/misc/energy_surf_interior"
+	$FleshCubeTexture          	"vgui/white"
+	$FleshBorderNoiseScale     	0.5
+	$FleshBorderWidth			0.4
+	$FleshBorderSoftness		0.02
+	$FleshBorderTint			"[ 1.20 1.30 2.55 ]"
+	$FleshGlossBrightness		16
+	$FleshDebugForceFleshOn	 	1
+	$FleshScrollSpeed			8.0	
+	
+	"Proxies"
+	{
+		"FleshInterior"
+		{
+		}
+	}
+}

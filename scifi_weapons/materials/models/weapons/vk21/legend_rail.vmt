@@ -1,0 +1,43 @@
+"VertexlitGeneric"
+{
+	$basetexture 				"models/weapons/vk21/rail_baset"
+	$bumpmap 					"models/weapons/vk21/rail_bump"
+	$phongexponenttexture 		"models/weapons/vk21/rail_phong"
+
+    $envmap 					"env_cubemap"
+    $normalmapalphaenvmapmask 	1
+	$envmaptint 				"[ 0.1 0.15 0.2 ]"
+	$envmapconstrast 			1
+	$envmapfresnel 				0.8
+
+	$surfaceprop 				"metal"
+	$nocull						0
+	$nodecal 					0
+	$halflambert 				1
+
+	$selfillum					1
+	$selfillummask 				"models/weapons/vk21/rail_illum"
+	$selfillumtint 				"[ 4 0.1 0.3 ]"
+
+	$phong 						1
+	$phongboost 				4
+	$phongfresnelranges			"[ 0.05 3 0.01 ]"
+	$phongalbedotint 			1
+	$phongwarptexture 			"models/weapons/vk21/legend_phongwarp"
+	
+	$rimlight 					1
+	$rimlightboost 				0.2
+	$rimmask 					1
+	
+	$detail 					"models/weapons/vk21/legend_detail"
+	$detailblendmode 			0
+	$detailblendfactor 			0.1
+	$detailScale 				1
+	$detailtint 				"[ 1 1 1 ]"
+	
+	$color2 "[ 4 4 5 ]"
+
+	"Proxies" 
+	{
+	}
+}

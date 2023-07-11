@@ -1,0 +1,23 @@
+"Unlittwotexture"
+{
+	// Original shader: VertexLitTexture
+	"$basetexture" "models/weapons/hwave/holo_hexagon_chroma"
+	"$texture2"	"models/weapons/hwave/holo_noise"
+	"$additive" 1
+	"$model" 1
+	//"$envmap" "env_cubemap"
+	//"$envmaptint" "[ 0.6 0.6 0.6 ]"	
+//	"$ignorez" "1"
+
+	"Proxies"
+	{
+
+		"TextureScroll"
+		{
+			"texturescrollvar" "$texture2transform"
+			"texturescrollrate" 0.5
+			"texturescrollangle" 90
+		}
+	}
+}
+

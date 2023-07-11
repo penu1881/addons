@@ -1,0 +1,42 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"Models/festive/pumpkin01"
+	"$bumpmap"	"Models/festive/pumpkin01_normal"
+
+//env values
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	1
+	"$envmaptint" 			"[ .0075 .0065 .006 ]"
+	"$envmapconstrast" 		1
+	"$surfaceprop" 			"watermelon"
+
+//illumination values
+	"$halflambert" 			1
+	"$selfillum" 			1
+
+//misc. status
+	"$model" 				1
+	// "// $nocull"				1
+
+//phong values (expected "phong 1")
+	"$phong" 			"1"
+	"$phongexponent" 			"4"
+	"$phongboost"			"0.2"
+	"$phongfresnelranges"		"[0.6 1.1 2.1]" //"[.45 .90 .135]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"			"1"
+	"$rimlightexponent"			"32"
+	"$rimlightboost"			".1"
+	"$rimmask"			"1"
+
+//detail
+	"$detail" 				"models/weapons/festive/blood_decale"
+	"$detailblendmode" 		"2"
+	"$detailblendfactor" 		"0.3"
+	"$detailScale" 			"0.5"
+
+	"Proxies"
+	{
+	}
+}

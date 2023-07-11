@@ -1,0 +1,58 @@
+"VertexlitGeneric"
+{
+	$basetexture 				"models/weapons/gravrifle/gravrifle_baset"
+	$bumpmap 					"models/weapons/gravrifle/gravrifle_bump"
+	$phongexponenttexture 		"models/weapons/gravrifle/gravrifle_phong"
+
+    $envmap 					"env_cubemap"
+    $normalmapalphaenvmapmask 	1
+	$envmaptint 				"[ 0.1 0.1 0.1 ]"
+	$envmapconstrast 			1
+	$envmapfresnel 				0.6
+	
+	$halflambert 				1
+	
+	$selfillum					1
+	$selfillummask 				"models/weapons/gravrifle/gravrifle_illum"
+	$selfillumtint 				"[ 1.2 0.2 6.2 ]"
+
+	$phong 						1
+	$phongboost 				4
+	$phongfresnelranges			"[ 2 0.01 0.05 ]"
+	$phongalbedotint 			1
+
+	$rimlight 					1
+	$rimlightboost 				4
+	$rimmask 					1
+	
+	$detail 					"models/weapons/gravrifle/gravrifle_detail"
+	$detailblendmode 			4
+	$detailblendfactor 			0.12
+	$detailScale 				16
+	
+	$emissiveBlendEnabled 		1
+	$emissiveBlendTexture		"models/weapons/gravrifle/gravrifle_noise"
+	$emissiveBlendBaseTexture	"models/weapons/gravrifle/gravrifle_illum"
+	$emissiveBlendFlowTexture	"models/weapons/gravrifle/gravrifle_flow"
+	$emissiveBlendTint 			"[ 1 1 1 ]"
+	$emissiveBlendStrength 		4
+	$emissiveBlendScrollVector 	"[ 0.3 0.3 ]"
+
+	$energycolor 				"[ 2 3 24 ]"
+
+	"Proxies" 
+	{
+		"Equals"
+		{
+			"srcVar1" 		$energycolor
+			"resultVar" 	$selfillumtint
+		}
+		
+		"Multiply"
+		{
+			"srcVar1" 		$energycolor
+			"srcVar2"		$emissiveBlendStrength
+			"resultVar" 	$emissiveBlendTint
+		}
+	}
+}

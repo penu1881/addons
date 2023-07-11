@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	$basetexture 				"models/weapons/dark/corruptor_holo_ammo"
+	$ignorez 					1
+	$additive 					1
+	$model 						1
+	$color "[0.5 0.5 0.5]"
+}

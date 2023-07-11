@@ -1,0 +1,44 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/fallingstar/case_baset"
+	"$bumpmap" "models/weapons/fallingstar/case_bump"
+
+//illumination values
+	"$halflambert" 			1
+	"$selfillum"			1
+
+//misc. status
+	"$model" 				1
+	// "// $nocull"				1
+	"$nodecal" 			1
+
+//env values
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmaptint" 			"[ 0.75 0.725 0.75 ]" //"[ .055 .055 .055 ]"
+	"$envmapconstrast" 		"1"
+	"$surfaceprop" 			"metal"
+
+//phong values (expected "phong 1")
+	"$phong" 			"1"
+//	"$phongexponent" 			"64"
+	"$phongboost"			"8"
+	"$phongfresnelranges"		"[.1 1 10]" //"[0.6 1.1 2.1]" //"[.45 .90 .135]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"			"1"
+	"$rimlightexponent"			"16"
+	"$rimlightboost"			".1"
+	"$rimmask"			"1"
+
+//phong texture paths
+	"$phongexponenttexture" 		"models/weapons/fallingstar/case_phong"
+//	"$phongwarptexture"  		"models/weapons/fallingstar/phnwarp"
+	"$lightwarptexture"			"models/weapons/fallingstar/lgtwarp"
+
+	"Proxies"
+	{
+	}
+}
+
+

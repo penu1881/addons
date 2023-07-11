@@ -1,0 +1,40 @@
+"vertexlitgeneric"	//shader
+{
+//texture paths
+	"$baseTexture" 			"models/weapons/tbolt/tbolt_baset_common"
+	"$bumpmap" 			"models/weapons/tbolt/tbolt_bump"
+
+//env values
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmaptint" 			"[ .015 .015 .015 ]"
+	"$envmapconstrast" 		"1"
+	"$surfaceprop" 			"metal"
+
+//illumination values
+	"$selfillum" 			"1"
+	"$selfillumtint"			"[ 1 1 1 ]"
+	"$halflambert" 			"1"
+	"$nodecal" 			"1"
+
+//misc. status
+	"$model" 				"1"
+
+//phong values (expected "phong 1")
+	"$phong"     			"1"
+	"$phongexponent"  		"30.5"
+	"$phongboost"   			"2"
+	"$phongfresnelranges"   		"[.45 .90 .135]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"			"1"
+	"$rimlightexponent"			"16.2"
+	"$rimlightboost"			"0.01"
+	"$rimmask"			"1"
+
+//phong texture paths
+//	"$phongexponenttexture"  		"models/weapons/v_physcannon/v_physc_phong"
+
+
+}
+

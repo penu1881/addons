@@ -1,0 +1,13 @@
+"Refract"
+{
+	"$bumpmap" "vfx/warp/ex_warp_1"
+ 	"$normalmap" "vfx/warp/ex_warp_1"
+ 	"$Refractamount" "-.015"
+ 	$vertexalpha 1
+ 	$vertexcolor 1
+ 	$translucent 1
+ 	$forceRefract 1
+ 	$bluramount 0.3
+ 	$vertexcolormodulate 1
+ 	$NoCull 1
+}

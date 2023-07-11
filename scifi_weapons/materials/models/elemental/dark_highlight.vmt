@@ -1,0 +1,21 @@
+"Aftershock"
+{
+	$bumpmap				"shadertest/noise_normal"
+	$normalmap				"models/black_normal"
+
+	$colortint  			"[ 1 1 1 ]"
+
+	$SilhouetteColor		"[ 1 1 1 ]"
+	$SilhouetteThickness	0.6
+
+	$GroundMin				-2
+	$GroundMax				2
+
+	$refractamount 			0.1
+	$bluramount 			1
+
+	$forcerefract 			1
+	$model 					1
+	$additive 				1
+//	$ignorez 				1
+}

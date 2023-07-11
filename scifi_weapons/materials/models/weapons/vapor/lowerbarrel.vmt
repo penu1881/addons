@@ -1,0 +1,42 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/vapor/lbarrel_baset"
+	"$bumpmap" "models/weapons/hwave/lbarrel_bump" //"models/props_combine/combine_generator01_normal"
+
+//illumination values
+	"$halflambert" 			1
+	"$selfillum"			1
+
+//misc. status
+	"$model" 				1
+	// "// $nocull"				1
+	"$nodecal" 			1
+
+//env values
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmaptint" 			"[ 0.15 0.15 0.15 ]" //"[ .055 .055 .055 ]"
+	"$envmapconstrast" 		"1"
+	"$surfaceprop" 			"metal"
+
+//phong values (expected "phong 1")
+	"$phong" 			"1"
+//	"$phongexponent" 			"64"
+	"$phongboost"			"32"
+	"$phongfresnelranges"		"[.1 1 10]" //"[0.6 1.1 2.1]" //"[.45 .90 .135]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"			"1"
+	"$rimlightexponent"			"16"
+	"$rimlightboost"			".1"
+	"$rimmask"			"1"
+
+//phong texture paths
+	"$phongexponenttexture" 		"models/weapons/hwave/lbarrel_phong"
+	"$phongwarptexture"  		"models/weapons/vapor/phnwarp"
+//	"$lightwarptexture"			"models/weapons/vapor/lgtwarp"
+
+	"Proxies"
+	{
+	}
+}

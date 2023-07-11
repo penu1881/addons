@@ -1,0 +1,23 @@
+"VertexlitGeneric"
+{
+	$basetexture 				"models/weapons/asa6/m_barrel_baset"
+	$bumpmap 					"models/weapons/asa6/m_barrel_bump"
+	$phongexponenttexture 		"models/weapons/asa6/m_barrel_phong"
+
+    $envmap 					"env_cubemap"
+    $normalmapalphaenvmapmask 	1
+	$envmaptint 				"[ 0.045 0.045 0.045 ]" 
+	$envmapconstrast 			1
+	$envmapfresnel 				0.6
+
+	$surfaceprop 				"metal"
+	$nocull						0
+	$nodecal 					0
+	$halflambert 				1
+
+	$phong 						1
+//	$phongexponent 				24
+	$phongboost 				24
+	$phongfresnelranges			"[ 0.5 0.01 0.05 ]"
+	$phongalbedotint 			1
+}

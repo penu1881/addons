@@ -1,0 +1,21 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/grinder/engine_baset"
+	"$bumpmap" "models/weapons/grinder/engine_bump"
+
+	"$envmap"			"env_cubemap"
+	"$envmaptint" 			"[ .0512 .0512 .0512 ]"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmapcontrast" 			"1"
+
+	"$surfaceprop" 			"metal"
+	"$halflambert" 			"1"
+	"$nodecal" 			"1"
+	"$model" 				"1"
+
+	"$phong"     			"1"
+	"$phongexponent" 			"17.2"
+	"$phongboost"   			".4"
+	"$phongfresnelranges"  		"[1 1.7 2.5]" 
+	"$phongalbedotint" 			"1"
+}

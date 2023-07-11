@@ -1,0 +1,41 @@
+"vertexlitgeneric"
+{
+	$basetexture 				"models/weapons/hornet/case_baset"
+	$bumpmap 					"models/weapons/hornet/case_normal"
+	$phongexponenttexture 		"models/weapons/hornet/case_phong"
+
+	$halflambert 				1
+
+	$model 						1
+	$nodecal 					1
+
+	$envmap 					"env_cubemap"
+	$normalmapalphaenvmapmask 	1
+	$envmaptint 				"[ 0.15 0.125 0.155 ]"
+	$envmapconstrast 			1
+	$surfaceprop 				"metal"
+	
+	$selfillum					1
+	$selfillumtint			 	"[ 1.2 1.1 2 ] "
+
+	$emissiveBlendEnabled 		1
+	$emissiveBlendTexture		"effects/combineshield/comshieldwall_close"
+	$emissiveBlendBaseTexture	"models/weapons/hornet/case_baset"
+	$emissiveBlendFlowTexture	"particle/warp1_dudv"
+	$emissiveBlendTint 			"[ 1 0.4 1 ]"
+	$emissiveBlendStrength 		1
+	$emissiveBlendScrollVector 	"[ 0.1 0.04 ]"
+
+	$phong 						1
+	$phongboost					8
+	$phongfresnelranges			"[.1 1 10]"
+	$phongalbedotint 			1
+
+	$rimlight					1
+	$rimlightexponent			16
+	$rimlightboost				.1
+
+	Proxies
+	{
+	}
+}

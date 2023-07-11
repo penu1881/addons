@@ -1,0 +1,25 @@
+"vertexlitgeneric"{
+	"$basetexture" 			"models/weapons/saphyre/case_baset"
+	"$bumpmap" 			"models/weapons/hwave/case_bump"
+    $envmap 					"env_cubemap"
+    $normalmapalphaenvmapmask 	1
+	$phongwarptexture			"models/weapons/vapor/phnwarp"
+
+	$envmaptint 				"[ 0.065 0.065 0.065 ]" 
+	$envmapconstrast 			1
+
+	$surfaceprop 				"metal"
+	$nocull						0
+	$nodecal 					0
+	$halflambert 				1
+
+	$phong 						1
+	$phongboost 				24
+	$phongfresnelranges			"[ 0.1 5 1 ]"
+	$phongalbedotint 			1
+	
+	$rimlight					1
+	$rimlightexponent			16
+	$rimlightboost				.1
+	$rimmask					1
+}

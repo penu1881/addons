@@ -1,0 +1,39 @@
+vertexlitgeneric	//shader
+{
+//texture paths
+	$basetexture 			"models/weapons/tbolt/tbolt_case_baset"
+	$bumpmap 			"models/weapons/tbolt/tbolt_case_bump"
+	$phongexponenttexture 		"models/weapons/tbolt/tbolt_case_phong"
+
+//env values
+	$envmap 				"env_cubemap"
+	$normalmapalphaenvmapmask 	1
+	$envmaptint 			"[ .1 .1 .1 ]"
+	$envmapconstrast 			1
+	$surfaceprop 			"metal"
+
+//illumination values
+	$halflambert 			1
+//	$selfillum 				1
+
+//misc. status
+	$model 				1
+	// $nocull				1
+	$nodecal 				1
+//	$alphatest 			1
+//	$translucent 			1
+	
+//phong values 
+	$phong 				1
+	$phongboost			12
+	$phongfresnelranges		"[ 0.2 0.6 1 ]" //"[.45 .90 .135]"
+	$phongalbedotint 			1
+
+	$ambientocclusion 			1 //actually obsolete, since this isn't SFM
+	
+	Proxies
+	{
+	}
+}
+
+

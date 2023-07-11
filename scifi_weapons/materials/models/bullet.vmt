@@ -1,0 +1,23 @@
+"vertexlitgeneric"	//shader
+{
+//texture paths
+	"$baseTexture" 			"models/bullet_baset"
+	"$bumpmap" 			"models/bullet_bump"
+
+//env values
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmaptint" 			"[ .0132 .0132 .0132 ]"
+	"$envmapconstrast" 		"1"
+	"$surfaceprop" 			"metal"
+
+//misc. status
+	"$model" 				"1"
+
+//phong values (expected "phong 1")
+	"$phong" 			"1"
+	"$phongexponent" 			"120"
+	"$phongboost"			"30"
+	"$phongfresnelranges"		"[.45 .90 .135]"
+	"$phongalbedotint" 			"1"
+}

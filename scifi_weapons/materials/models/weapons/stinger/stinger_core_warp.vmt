@@ -1,0 +1,24 @@
+"Refract"
+{
+ 	"$normalmap" 				"models/weapons/stinger/core_warp_bump"
+ 	"$dudvmap" 				"effects/muzzleblur_fx/muzzleblur_fx"
+
+	"$translucent" 				"1"
+//	"$additive"				"1"
+
+//	"$refracttinttexture" 				"models/weapons/stinger/core"
+	"$refracttint" 				"[ 3.1 3.3 3.8 ]"
+	"$refractamount" 				"0.1"
+	"$forcerefract" 				"1"
+	"$bluramount" 				"0"
+	"$nofog" 					"0"	
+	"$selfillum" 				"0"
+	"$modulate" 				"1"
+	"$model"					"1"
+	// "// $nocull"					"1"
+
+	"dx80"
+	{
+		"$fallbackmaterial" 			"effects/superphys_fx/fallback"
+	}
+}

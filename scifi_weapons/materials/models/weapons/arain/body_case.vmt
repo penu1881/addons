@@ -1,0 +1,21 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "Models/weapons/arain/casing"
+	"$bumpmap" "models/weapons/grinder/body_bump"
+
+	"$envmap"			"env_cubemap"
+	"$envmaptint" 			"[ .07 .07 .07 ]"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmapcontrast" 			"1"
+
+	"$surfaceprop" 			"metal"
+	"$halflambert" 			"1"
+	"$nodecal" 			"1"
+	"$model" 				"1"
+
+	"$phong"     			"1"
+	"$phongexponent" 			"32"
+	"$phongboost"   			"1.2"
+	"$phongfresnelranges"  		"[1 1.7 2.5]" 
+	"$phongalbedotint" 			"1"
+}

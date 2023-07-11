@@ -1,0 +1,42 @@
+"VertexLitGeneric"
+{
+	$basetexture 				"vgui/black"
+	$bumpmap 					"vgui/black"
+	
+	$additive 					1
+	$alphatest 					1
+	$translucent 				1
+	
+	$selfillum 					1
+	$selfillummask 				"vgui/black"
+	$selfillumtint 				"[ 1 1 1 ]"
+
+	$emissiveBlendEnabled 		1
+	$emissiveBlendTexture 		"models/weapons/spectra/celest_glyph_noise"
+	$emissiveBlendFlowTexture	"models/weapons/vk21/holo_flow"
+	$emissiveBlendBaseTexture	"vgui/black"
+	$emissiveBlendTint 			"[ 32 4 4 ]"
+	$emissiveBlendStrength 		1
+	$emissiveBlendScrollVector 	"[ 0.1 2 ]" 
+	
+	// $vertexcolor 				1
+	// $vertexalpha 				1
+	
+	// $time 0.625
+
+	"Proxies"
+	{
+		"Equals"
+		{
+			"srcVar1" 		$selfillumtint
+			"resultVar" 	$emissiveBlendTint
+		}
+		
+		"Multiply"
+		{
+			"srcVar1" 		$emissiveBlendTint
+			"srcVar2"		$emissiveBlendStrength
+			"resultVar" 	$emissiveBlendTint
+		}
+	}
+}

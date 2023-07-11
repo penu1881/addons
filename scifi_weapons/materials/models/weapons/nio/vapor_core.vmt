@@ -1,0 +1,46 @@
+"VertexLitGeneric"
+{
+	"$basetexture" 			"models/weapons/nio/V_IRifle_core"
+	"$bumpmap" 			"models/weapons/nio/core_normal"
+	"$surfaceprop" 			"glass"
+
+	"$selfillum" 			"1"
+
+
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	"1"
+//	"$envmaptint" 			"[ 0.25 0.82 0.01 ]"
+	"$envmapconstrast"		"1"
+
+//detail
+	"$detail" 				"models/weapons/vapor/core_detail"
+	"$detailblendmode" 		"1"
+	"$detailblendfactor" 		"1.0"
+	"$detailScale" 			"1.0"
+
+//phong values (expected "phong 1")
+	"$phong" 			"1"
+	"$phongexponent" 			"120"
+	"$phongboost"			"30"
+	"$phongfresnelranges"		"[.45 .90 .135]"
+	"$phongalbedotint" 			"1"
+
+	"$rimlight"			"1"
+	"$rimlightexponent"			"1.2"
+	"$rimlightboost"			".3"
+	"$rimmask"			"1"
+
+//phong texture paths
+	"$phongexponenttexture" 		"models/weapons/nio/v_irifle_phong"
+
+	"Proxies"
+	{
+		"Sine"
+		{
+			resultVar		$detailblendfactor 
+			sineperiod	1.7
+			sinemin		0
+			sinemax		1
+		}
+	}
+}

@@ -1,0 +1,29 @@
+"Unlittwotexture"
+{
+	// Original shader: VertexLitTexture
+	"$basetexture" "models/weapons/saphyre/display_notify_reload"
+	"$texture2" "models/weapons/hwave/holo_noise"
+	"$additive" 1
+	"$model" 1
+	//"$envmap" "env_cubemap"
+	//"$envmaptint" "[ 0.6 0.6 0.6 ]"	
+
+	"$offset" "0"
+
+	"Proxies"
+	{
+		"Sine"
+		{
+			"sineperiod" 4
+			"timeoffset" "$offset"
+			"resultVar" "$color[0]"
+		}
+
+		"TextureScroll"
+		{
+			"texturescrollvar" "$texture2transform"
+			"texturescrollrate" 0.5
+			"texturescrollangle" 90
+		}
+	}
+}

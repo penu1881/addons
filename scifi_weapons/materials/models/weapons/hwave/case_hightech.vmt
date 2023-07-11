@@ -1,0 +1,40 @@
+"vertexlitgeneric"	//shader
+{
+//texture paths
+	"$basetexture" 			"models/weapons/hwave/case_hightech_baset"
+	"$bumpmap" 			"models/weapons/hwave/case_hightech_bump"
+
+//env values
+	"$envmap" 			"env_cubemap"
+	"$normalmapalphaenvmapmask" 	1
+	"$envmaptint" 			"[ .07 .07 .075 ]"
+	"$envmapconstrast" 		1
+	"$surfaceprop" 			"metal"
+
+//illumination values
+	"$halflambert" 			1
+//	"$selfillum" 			1
+
+//misc. status
+	"$model" 				1
+	// "// $nocull"				1
+	"$nodecal" 			1
+	"$alphatest" 			1
+	"$translucent" 			1
+
+//phong values (expected "phong 1")
+	"$phong" 			"1"
+	"$phongexponent" 			"64"
+	"$phongboost"			"2"
+	"$phongfresnelranges"		"[ 0.05 0.1 1 ]" //"[.45 .90 .135]"
+	"$phongalbedotint" 			"1"
+
+//phong texture paths
+//	"$phongexponenttexture" 		"models/weapons/hwave/case_hightech_phong"
+
+
+	"Proxies"
+	{
+	}
+}
+

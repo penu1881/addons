@@ -1,0 +1,35 @@
+"VertexlitGeneric"
+{
+	$basetexture 				"models/weapons/vk21/barrel_baset"
+	$bumpmap 					"models/weapons/vk21/barrel_bump"
+	$phongexponenttexture 		"models/weapons/vk21/barrel_phong"
+
+    $envmap 					"env_cubemap"
+    $normalmapalphaenvmapmask 	1
+	$envmaptint 				"[ 0.03 0.03 0.04 ]"
+	$envmapconstrast 			1
+	$envmapfresnel 				0.4
+
+	$surfaceprop 				"metal"
+	$nocull						0
+	$nodecal 					0
+	$halflambert 				1
+
+	$phong 						1
+	$phongboost 				2
+	$phongfresnelranges			"[ 0.1 1.8 2 ]"
+	$phongalbedotint 			1
+	
+	$detail 					"models/weapons/vk21/arctic_detail"
+	$detailblendmode 			3
+	$detailblendfactor 			0.15
+	$detailScale 				0.6
+	$detailtint 				"[ 1 1 1 ]"
+	
+	//$color2 "[ 8 7.5 7.7 ]"
+	$color2 "[ 2 2 2 ]"
+	
+	"Proxies" 
+	{
+	}
+}

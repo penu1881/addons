@@ -1,0 +1,28 @@
+"VertexLitGeneric"
+{
+	"$basetexture" 			"models/props_combine/introomarea_glass"
+	"$bumpmap"			"models/black_fakebump"
+//	"$phongwarptexture"		"models/weapons/meteor/glass_reflection"
+	"$envmapmask" 			"models/props_combine/introomarea_glassmask"
+
+	"$envmap"			 "env_cubemap"
+	"$envmaptint" 			"[ .032 .0325 .04 ]"
+	"$normalmapalphaenvmapmask" 	"1"
+	"$envmapcontrast" 			"1"
+	"$surfaceprop" 			"metal"
+	"$halflambert" 			"1"
+	"$nodecal" 			"1"
+	"$model" 				"1"
+	"$additive" "1"
+
+	"$phong"     			"1"
+	"$phongexponent" 			 "512"
+	"$phongboost"   			".6"
+	"$basemapluminancephongmask" 	"1"
+	"$phongfresnelranges"  		 "[ 1 1 10 ]" //"[1 1.7 2.5]" 
+	"$phongalbedotint" 			"1"										
+
+	"$rimlight" 			"1" 
+	"$rimlightexponent" 			"15"
+	"$rimlightboost" 			".87"
+}

@@ -1,0 +1,15 @@
+"g_bokehblur"
+{
+	$normalmap 		"_rt_FullFrame_FB"
+	$refracttint 	"[ 1 1 1 ]"
+	$refracttinttexture "_rt_FullFrame_FB"
+	
+	$forcerefract 	1
+	$refractamount 	0.2
+	$bluramount 	2
+	
+	$ignorez 		1
+	$additive 		0
+	
+	$basetexturetransform "center 0 0 scale 1 1 rotate 0 translate 0 0"
+}

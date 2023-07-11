@@ -1,0 +1,40 @@
+"VertexLitGeneric"
+{ 
+	$basetexture 				"models/weapons/asa6/rt_scope_offline_baset"
+	$bumpmap 					"models/weapons/misc/rt_scope_bump"
+	$phongexponenttexture 		"models/weapons/misc/rt_scope_phong"
+	$phongwarptexture			"models/weapons/asa6/rt_scope_phnwarp"
+
+	$basetexturetransform		"center 0 0 scale 0.5 0.5 rotate 180 translate 0 0"
+
+	$surfaceprop 				"Glass"
+	$model 						1
+
+//	$normalmapalphaenvmapmask 	1
+	$envmap 					env_cubemap
+	$envmaptint 				"[ .075 .1 .125 ]"
+	$envmapfresnel 				0.6
+	$envmapfresnelminmaxexp 	"[ 16 2 2 ]"
+
+	$selfillum 					1
+	$selfillumtint 				"[ .7 .75 .8 ]"
+	$selfillumfresnel			1
+	$selfillumfresnelminmaxexp	"[ 4 1.4 1 ]"
+
+	$phong 						1
+//	$phongexponent 				12
+	$phongboost 				4
+	$phongabeldotint 			1
+	$phongfresnelranges 		"[ 2 4 16  ]"
+	$basemapluminancephongmask	1
+	$phongtint 					"[ 0.2 0.3 1 ]"
+
+	$nofog 						1	
+
+	"Proxies"
+	{
+		"PixelRenderer"
+		{
+		}
+	}
+} 

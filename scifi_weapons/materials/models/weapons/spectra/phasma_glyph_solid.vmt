@@ -1,0 +1,39 @@
+"VertexLitGeneric"
+{
+	$basetexture 				"particle/celest_glyph_blade"
+	$bumpmap					"particle/celest_glyph_blade"
+
+	$surfaceprop 				"default_silent"
+
+	$selfillum 					1
+	$selfillumtint				"[ .2 .2 .3 ]"
+
+	$nodecal 					1
+	$additive 					1
+	$alphatest 					1
+	$translucent 				1
+
+	$emissiveBlendEnabled 		1
+	$emissiveBlendTexture		"models/weapons/spectra/celest_glyph_noise"
+	$emissiveBlendBaseTexture	"models/weapons/spectra/celest_glyph_mask"
+	$emissiveBlendFlowTexture	"models/weapons/spectra/celest_glyph_flow"
+	$emissiveBlendTint 			"[ 0.6 0.8 100 ]"
+	$emissiveBlendStrength 		2
+	$emissiveBlendScrollVector 	"[ 0.6 0.2 ]"
+
+	"Proxies"
+	{
+		"Equals"
+		{
+			"srcVar1" 		$selfillumtint
+			"resultVar" 	$emissiveBlendTint
+		}
+		
+		"Multiply"
+		{
+			"srcVar1" 		$emissiveBlendTint
+			"srcVar2"		$emissiveBlendStrength
+			"resultVar" 	$emissiveBlendTint
+		}
+	}
+}
