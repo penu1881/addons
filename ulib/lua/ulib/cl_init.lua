@@ -20,7 +20,6 @@ include( "ulib/shared/cami_ulib.lua" )
 local files = file.Find( "ulib/modules/*.lua", "LUA" )
 if #files > 0 then
 	for _, file in ipairs( files ) do
-		Msg( "[ULIB] Loading SHARED module: " .. file .. "\n" )
 		include( "ulib/modules/" .. file )
 	end
 end
@@ -29,7 +28,6 @@ end
 local files = file.Find( "ulib/modules/client/*.lua", "LUA" )
 if #files > 0 then
 	for _, file in ipairs( files ) do
-		Msg( "[ULIB] Loading CLIENT module: " .. file .. "\n" )
 		include( "ulib/modules/client/" .. file )
 	end
 end

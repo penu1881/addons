@@ -16,10 +16,6 @@ AddCSLuaFile()
 
 SCIFI_INTEGRITY_FLAG_PRECACHE = 20210727213519
 
-if ( CLIENT ) && ( !steamworks.IsSubscribed( 420970650 ) ) then
-	MsgC( Color( 220, 20, 40 ), "@SciFiWeapons : Tried to init Sci-Fi base without having the addon mounted\n" )
-end
-
 if ( SERVER ) then
 --	local devkey = file.Find( "mana_unlocks_*", "DATA" )
 	

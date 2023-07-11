@@ -1,7 +1,3 @@
-print("] NPC.hpBAR v1 created by TLEADER")
-print("] Fixed for Gmod 13 by GeekyGamer14")
-print("] Original garrysmod.org addon:")
-print("] http://www.garrysmod.org/downloads/?a=view&id=50734")
 if(CLIENT) then
   surface.CreateFont("HealthFont", {
 		font = "coolvetica",

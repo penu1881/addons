@@ -8,12 +8,10 @@ if not ulx then
 	local cl_modules = file.Find( "ulx/modules/cl/*.lua", "LUA" )
 
 	for _, file in ipairs( cl_modules ) do
-		Msg( "[ULX] Loading CLIENT module: " .. file .. "\n" )
 		include( "ulx/modules/cl/" .. file )
 	end
 
 	for _, file in ipairs( sh_modules ) do
-		Msg( "[ULX] Loading SHARED module: " .. file .. "\n" )
 		include( "ulx/modules/sh/" .. file )
 	end
 end

@@ -48,8 +48,6 @@ local fnIntegrityCheck = function()
 			-- LocalPlayer():ChatPrint( "SciFi Base detected compatibility issues, check developer console for details." )
 			notification.AddLegacy( "SciFi Base detected compatibility issues, check developer console for details.", NOTIFY_ERROR, 15 )
 		end
-	else
-		MsgC( Color( 220, 220, 220 ), "SciFi Weapons sucessfully verified.\n" )
 	end
 end
 

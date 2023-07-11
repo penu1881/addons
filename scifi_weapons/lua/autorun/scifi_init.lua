@@ -1,19 +1,6 @@
---------------------My first SciFi weapon base--------------------
---		    	SciFi Weapons v18 - by Darken217		 		--
-------------------------------------------------------------------
--- Please do NOT use any of my code without further permission! --
-------------------------------------------------------------------
--- Purpose: Initialization of addon related convars, menus,     --
--- controls and the custom ammo type. 							--
--- Sound init is called here, too								--
-------------------------------------------------------------------
--- Initialized via autorun.										--
-------------------------------------------------------------------
-
 SCIFI_INTEGRITY_FLAG_INIT = 20210727213519
 
 local SciFiVersion = "Update 18 (v18.6)"
-print( "Darken217's SciFi Weapons, " .. SciFiVersion )
 AddCSLuaFile( "base/scifi_sounds.lua" )
 include( "base/scifi_sounds.lua" )
 

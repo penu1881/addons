@@ -646,39 +646,6 @@ HpwRewrite:IncludeFolder("hpwrewrite/misc", true)
 HpwRewrite:IncludeFolder("hpwrewrite/options", true)
 
 if SERVER then
-	-- Version checker
-	hook.Add("Initialize", "hpwrewrite_versionautocheck", function()
-		-- For some reason it won't work without timer
-		timer.Simple(0, function()
-			http.Fetch(HpwRewrite.VCheckLink,
-				function(body, len, headers, code)
-					if not body then return end
-					local info = util.JSONToTable(body)
-
-					if info then
-						local version = info.AddonInfo.Version
-
-						if version == HpwRewrite.Version then
-							MsgC(Color(0, 255, 0), "Harry Potter Magic Wand is up to date!\n")
-							HpwRewrite.IsUpToDate = true
-						else
-							local msg1 = "Seems like Harry Potter Magic Wand is outdated!\n"
-							local msg2 = "New version: " .. version .. "\n"
-							local msg3 = "Your version: " .. HpwRewrite.Version .. "!\n"
-							MsgC(Color(255, 100, 80), msg1, msg2, msg3)
-						end
-					else
-						print("Can't read version!")
-					end
-				end,
-
-				function(error)
-					print("Cannot check version of Harry Potter Magic Wand!")
-				end
-			)
-		end)
-	end)
-
 	-- Handlers
 	hook.Add("PlayerLoadout", "hpwrewrite_givewandonspawn", function(ply)
 		if HpwRewrite.CVars.GiveWand:GetBool() then ply:Give(HpwRewrite.WandClass) end
@@ -712,6 +679,3 @@ end
 
 HpwRewrite.Loaded = true
 hook.Run("hpwrewrite_loaded")
-
-if SERVER then MsgC(Color(0, 200, 255), "Magic Wand Rewrite addon has been loaded!\n") end
-HpwRewrite:LogDebug("Magic Wand Rewrite addon has been loaded!")
