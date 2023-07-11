@@ -9,6 +9,8 @@ function HpwRewrite.Language:AddLanguage(codename, name)
 	self.Languages[codename] = { }
 	self.Languages[codename].Name = name
 	self.Languages[codename].Dictonary = { }
+
+	print("[Wand] Added " .. name .. " language")
 end
 
 function HpwRewrite.Language:AddWord(lCodeName, index, word)
@@ -63,3 +65,5 @@ if customlang then
 		HpwRewrite.Language.CurrentLanguage = string.lower(val)
 	end
 end
+
+print("[Wand] Loaded " .. HpwRewrite.Language.CurrentLanguage .. " language!")
