@@ -37,7 +37,7 @@ function Spell:OnFire(wand)
 	if self.NotAvailable then sound.Play("npc/manhack/mh_blade_snick1.wav", wand:GetPos(), 60, 100) return false end
 	self.NotAvailable = true
 
-	timer.Create("hpwrewrite_dremboom_nerf" .. self.Owner:EntIndex(), 7, 1, function()
+	timer.Create("hpwrewrite_dremboom_nerf" .. self.Owner:EntIndex(), 1, 1, function()
 		self.NotAvailable = false
 	end)
 

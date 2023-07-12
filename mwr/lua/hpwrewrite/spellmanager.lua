@@ -27,8 +27,6 @@ if CLIENT then
 		self.Categories[name] = true
 	end
 
-	HpwRewrite:AddCategory(HpwRewrite.Language:GetWord("#favcategory"))
-
 	-- Change current spell clientside request
 	function HpwRewrite:RequestSpell(name, checkCvar)
 		if checkCvar and HpwRewrite.CVars.InstantAttack:GetBool() then

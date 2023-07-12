@@ -35,55 +35,7 @@ if CLIENT then
 
 		return data, "hpwrewrite/client/binds.txt"
 	end
-
-
-	-- Favourite spells
-	local name = "hpwrewrite/client/favourites.txt"
-
-	function HpwRewrite.DM:ReadFavourites()
-		local fav = file.Read(name)
-
-		if fav then 
-			local spells = string.Explode("¤", fav)
-			return spells, name
-		end
-	end
-
-	function HpwRewrite.DM:AddToFavourites(spellName)
-		local fav = file.Read(name)
-
-		if fav then 
-			file.Write(name, fav .. "¤" .. spellName)
-			HpwRewrite.FavouriteSpells[spellName] = true
-		end
-	end
-
-	function HpwRewrite.DM:RemoveFromFavourites(spellName)
-		local fav = file.Read(name)
-
-		if fav then 
-			local target = "¤" .. spellName
-			file.Write(name, string.Replace(fav, target, ""))
-			HpwRewrite.FavouriteSpells[spellName] = false
-		end
-	end
-
-	if not file.Exists(name, "DATA") then
-		local data = ""
-		file.Write(name, data)
-		print("hpwrewrite/client/favourites.txt has been created")
-	else
-		local fav = HpwRewrite.DM:ReadFavourites()
-		if fav then 
-			for k, v in pairs(fav) do
-				HpwRewrite.FavouriteSpells[v] = true
-			end
-		end
-	end
-
-	return 
 end
-
 -- Config
 if not file.Exists("hpwrewrite/cfg", "DATA") then
 	file.CreateDir("hpwrewrite/cfg")
@@ -196,14 +148,3 @@ function HpwRewrite.DM:LoadDataFile(ply)
 
 	return data, filename
 end
-
-
-
-
-
-
-
-
-
-
-

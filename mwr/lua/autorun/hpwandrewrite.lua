@@ -4,7 +4,6 @@ HpwRewrite = HpwRewrite or { }
 
 HpwRewrite.Version = 10004
 HpwRewrite.VCheckLink = "https://raw.githubusercontent.com/Ayditor/HPW_Rewrite/master/info.txt"
-HpwRewrite.FavouriteSpells = HpwRewrite.FavouriteSpells or { }
 HpwRewrite.DebugInfo = HpwRewrite.DebugInfo or { }
 
 HpwRewrite.Colors = HpwRewrite.Colors or { }

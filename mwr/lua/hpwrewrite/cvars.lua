@@ -38,14 +38,12 @@ HpwRewrite.CVars.Version = CreateConVar("hpwrewrite_version", HpwRewrite.Version
 -- Serverside cvars
 HpwRewrite.CVars.DebugMode = CreateConVar("hpwrewrite_sv_debugmode", "0", { FCVAR_ARCHIVE, FCVAR_REPLICATED, FCVAR_NOTIFY })
 
-local value = "0"
-if game.SinglePlayer() then value = "1" end
-HpwRewrite.CVars.NoLearning = CreateConVar("hpwrewrite_sv_nolearning", value, { FCVAR_ARCHIVE, FCVAR_REPLICATED, FCVAR_NOTIFY })
-HpwRewrite.CVars.GiveWand = CreateConVar("hpwrewrite_sv_givewand", value, { FCVAR_ARCHIVE, FCVAR_NOTIFY })
+HpwRewrite.CVars.NoLearning = CreateConVar("hpwrewrite_sv_nolearning", "0", { FCVAR_ARCHIVE, FCVAR_REPLICATED, FCVAR_NOTIFY })
+HpwRewrite.CVars.GiveWand = CreateConVar("hpwrewrite_sv_givewand", "1", { FCVAR_ARCHIVE, FCVAR_NOTIFY })
 
 HpwRewrite.CVars.DisableThrowing = CreateConVar("hpwrewrite_sv_nothrowing", "0", { FCVAR_ARCHIVE })
-HpwRewrite.CVars.NoAccuracy = CreateConVar("hpwrewrite_sv_noaccuracy", "0", { FCVAR_ARCHIVE })
-HpwRewrite.CVars.NoSay = CreateConVar("hpwrewrite_sv_nosay", "0", { FCVAR_ARCHIVE })
+HpwRewrite.CVars.NoAccuracy = CreateConVar("hpwrewrite_sv_noaccuracy", "1", { FCVAR_ARCHIVE })
+HpwRewrite.CVars.NoSay = CreateConVar("hpwrewrite_sv_nosay", "1", { FCVAR_ARCHIVE })
 HpwRewrite.CVars.NoTimer = CreateConVar("hpwrewrite_sv_notimer", "0", { FCVAR_ARCHIVE })
 HpwRewrite.CVars.AlwaysCenter = CreateConVar("hpwrewrite_sv_spawncenter", "0", { FCVAR_ARCHIVE })
 HpwRewrite.CVars.AnimSpeed = CreateConVar("hpwrewrite_sv_animspeed", "1", { FCVAR_ARCHIVE, FCVAR_REPLICATED })
@@ -71,11 +69,11 @@ if CLIENT then
 	HpwRewrite.CVars.NoChoosing = CreateClientConVar("hpwrewrite_cl_nochoosing", "0", true, false)
 	HpwRewrite.CVars.NoTextIfIcon = CreateClientConVar("hpwrewrite_cl_notexticon", "0", true, false)
 
-	HpwRewrite.CVars.MmorpgStyle = CreateClientConVar("hpwrewrite_cl_mmorpgstyle", "1", true, false)
+	HpwRewrite.CVars.MmorpgStyle = CreateClientConVar("hpwrewrite_cl_mmorpgstyle", "0", true, false)
 	HpwRewrite.CVars.DrawIcons = CreateClientConVar("hpwrewrite_cl_drawicons", "1", true, false)
 	HpwRewrite.CVars.DrawSpellName = CreateClientConVar("hpwrewrite_cl_drawspname", "1", true, false)
-	HpwRewrite.CVars.DrawHint = CreateClientConVar("hpwrewrite_cl_drawhint", "1", true, false)
-	HpwRewrite.CVars.DrawSelHint = CreateClientConVar("hpwrewrite_cl_drawhint2", "1", true, false)
+	HpwRewrite.CVars.DrawHint = CreateClientConVar("hpwrewrite_cl_drawhint", "0", true, false)
+	HpwRewrite.CVars.DrawSelHint = CreateClientConVar("hpwrewrite_cl_drawhint2", "0", true, false)
 	HpwRewrite.CVars.DrawCurrentSpell = CreateClientConVar("hpwrewrite_cl_drawcurspell", "1", true, false)
 	HpwRewrite.CVars.DrawSpellBar = CreateClientConVar("hpwrewrite_cl_drawspellbar", "1", true, false)
 
@@ -98,7 +96,7 @@ if CLIENT then
 	end)
 
 	HpwRewrite.CVars.XOffset = CreateClientConVar("hpwrewrite_cl_xoffset", "0", true, false)
-	HpwRewrite.CVars.YOffset = CreateClientConVar("hpwrewrite_cl_yoffset", "0", true, false)
+	HpwRewrite.CVars.YOffset = CreateClientConVar("hpwrewrite_cl_yoffset", "64", true, false)
 
 	HpwRewrite.CVars.UseWhiteSmoke = CreateClientConVar("hpwrewrite_cl_appwhitesmoke", "0", true, true)
 
@@ -106,7 +104,7 @@ if CLIENT then
 	HpwRewrite.CVars.SelfCastKey = CreateClientConVar("hpwrewrite_cl_selfcastkey", "66", true, false)
 	HpwRewrite.CVars.MenuKey = CreateClientConVar("hpwrewrite_cl_mmenukey", "108", true, false)
 
-	HpwRewrite.CVars.FontName = CreateClientConVar("hpwrewrite_cl_fontname", "Harry P", true, false)
+	HpwRewrite.CVars.FontName = CreateClientConVar("hpwrewrite_cl_fontname", "Gnuolane Rg", true, false)
 	cvars.AddChangeCallback("hpwrewrite_cl_fontname", function(cvar, old, new)
 		HpwRewrite:LoadFonts()
 		HpwRewrite.VGUI.ShouldUpdate = true

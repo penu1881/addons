@@ -299,17 +299,17 @@ if CLIENT then
 				surface.SetMaterial(spellbar)
 				surface.SetDrawColor(Color(255, 255, 255, 255))
 				surface.DrawTexturedRect(x - 3, y - 75, 616, 220)
-			else
-				draw.RoundedBox(0, x, y, 608, 70, Color(0, 0, 0, 150))
+			-- else
+			-- 	draw.RoundedBox(0, x, y, 608, 70, Color(0, 0, 0, 150))
 			end
 
 
 			local spellName = self:GetWandCurrentSpell()
-			if spellName == "" then spellName = "None" end
+			-- if spellName == "" then spellName = "None" end
 
-			local text = curSpellWord .. spellName
-			draw.SimpleText(text, "HPW_font2", x + 17, y + 13, HpwRewrite.Colors.Black, TEXT_ALIGN_LEFT)
-			draw.SimpleText(text, "HPW_font2", x + 16, y + 12, HpwRewrite.Colors.White, TEXT_ALIGN_LEFT)
+			local text = spellName
+			draw.SimpleText(text, "HPW_font3", x + 305, y - 100, HpwRewrite.Colors.Black, TEXT_ALIGN_CENTER)
+			draw.SimpleText(text, "HPW_font3", x + 305, y - 101, HpwRewrite.Colors.White, TEXT_ALIGN_CENTER)
 		end
 
 		if self.HpwRewrite.PrintHelp and HpwRewrite.CVars.DrawHint:GetBool() and not self.HpwRewrite.Select then
