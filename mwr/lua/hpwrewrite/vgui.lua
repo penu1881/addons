@@ -7,7 +7,7 @@ HpwRewrite.VGUI = HpwRewrite.VGUI or { }
 
 local infohelp
 
-local WindowColor = Color(80, 80, 80)
+local WindowColor = Color(35, 35, 35)
 
 local PlayerSpells = { }
 local PlayerLSpells = { }
@@ -51,13 +51,8 @@ function HpwRewrite.VGUI:CreateWindow(w, h, vis)
 	win:MakePopup()
 
 	win.Paint = function(self, w, h)
-		draw.RoundedBox(0, 0, 0, w, h, WindowColor)
-		draw.RoundedBox(0, 0, 0, w, 25, HpwRewrite.Colors.DarkGrey)
-	end
-
-	win.PaintOver = function(self, w, h)
-		surface.SetDrawColor(HpwRewrite.Colors.DarkGrey)
-		surface.DrawOutlinedRect(0, 0, w, h)
+		draw.RoundedBox(0, 0, 0, w, h, Color(35, 35, 35, 255))
+		draw.RoundedBox(0, 0, 0, w, 25, Color(35, 35, 35, 255))
 	end
 	
 	win.OnCloseButton = function(self) end
@@ -105,7 +100,7 @@ function HpwRewrite.VGUI:CreateButton(text, x, y, w, h, win, func)
 	btn.EnterAlpha = 0
 	btn.DoSound = true
 	btn.DrawDiff = true
-	btn.EnterColor = HpwRewrite.Colors.Blue
+	btn.EnterColor = Color(84, 11, 13, 255)
 
 	btn.OnCursorEntered = function(self) 
 		if self.DoSound then surface.PlaySound("hpwrewrite/enterbtn.wav") end 
@@ -124,7 +119,7 @@ function HpwRewrite.VGUI:CreateButton(text, x, y, w, h, win, func)
 		end
 	end
 
-	btn.MainColor = HpwRewrite.Colors.DarkGrey2
+	btn.MainColor = Color(25, 25, 25, 255)
 	btn.Paint = function(self, w, h)
 		local color = self.DrawDiff and (self.entered and self.EnterColor or self.MainColor) or self.MainColor
 		draw.RoundedBox(0, 0, 0, w, h, self.MainColor)
@@ -138,8 +133,6 @@ function HpwRewrite.VGUI:CreateButton(text, x, y, w, h, win, func)
 				self.EnterAlpha = math.Approach(self.EnterAlpha, 0, RealFrameTime() * 4000)
 			end
 		end
-
-		draw.RoundedBox(0, 0, 0, w, h*0.4, Color(255, 255, 255, 1))
 	end
 
 	func = func or function() end
@@ -210,7 +203,7 @@ function HpwRewrite.VGUI:CreateScrollPanel(x, y, w, h, parent)
 		self.pnlCanvas:SetWide(self:GetWide())
 	end
 
-	panel.HPWColorDraw = HpwRewrite.Colors.DarkGrey
+	panel.HPWColorDraw = Color(17, 17, 17, 255)
 	panel.Paint = function(self, w, h)
 		draw.RoundedBox(4, 0, 0, w, h, self.HPWColorDraw)
 	end
@@ -245,7 +238,7 @@ function HpwRewrite.VGUI:CreateSheet(x, y, w, h, parent)
 		self.btnLeft:AlignBottom(12)
 	end
 
-	sheet.tabScroller:DockMargin(0, 0, 0, 0)
+	sheet.tabScroller:DockMargin(8, 0, 0, 0)
 
 	sheet:SetPos(x, y)
 	sheet:SetSize(w, h)
@@ -256,12 +249,12 @@ end
 
 function HpwRewrite.VGUI:SetupSheetDrawing(sheet, activecolor)
 	local sizes = 0
-	activecolor = activecolor or WindowColor
+	activecolor = activecolor or Color(134, 2, 8, 255)
 	local innactivecolor = Color(activecolor.r * 1.1, activecolor.g * 1.1, activecolor.b * 1.1)
 
 	for k, v in pairs(sheet.Items) do
 		v.Tab.Paint = function(self, w, h)
-			local color = self.Active and activecolor or HpwRewrite.Colors.DarkGrey2
+			local color = self.Active and activecolor or Color(14, 14, 14, 255)
 			if self.entered and not self.Active then color = innactivecolor end
 			h = h - 6
 			draw.RoundedBox(0, 0, 0, w, h, color)
@@ -279,11 +272,11 @@ function HpwRewrite.VGUI:SetupSheetDrawing(sheet, activecolor)
 		v.Tab:SetFont("HPW_gui1")
 
 		local w, h = v.Tab:GetContentSize()
-		v.Tab:SetSize(w + 10, h + 18)
+		v.Tab:SetSize(w + 10, h + 15)
 
 		v.Tab.ApplySchemeSettings = function(self)
 			self.Active = self:GetPropertySheet():GetActiveTab() == self
-			self:SetColor((self.Active and activecolor == HpwRewrite.Colors.White) and HpwRewrite.Colors.DarkGrey2 or HpwRewrite.Colors.White)
+			self:SetColor((self.Active and activecolor == HpwRewrite.Colors.White) and HpwRewrite.Colors.DarkGrey or HpwRewrite.Colors.White)
 		end
 
 		local old = v.Tab.PerformLayout
@@ -299,8 +292,8 @@ function HpwRewrite.VGUI:SetupSheetDrawing(sheet, activecolor)
 	end
 
 	sheet.Paint = function(self, w, h)
-		draw.RoundedBox(4, 0, 0, w, h, activecolor)
-		draw.RoundedBox(0, 0, 0, w, 28, HpwRewrite.Colors.DarkGrey)
+		draw.RoundedBox(0, 0, 0, w, h, Color(35, 35, 35, 255))
+		draw.RoundedBox(0, 0, 0, w, 28, Color(35, 35, 35, 255))
 	end
 end
 
@@ -317,127 +310,6 @@ function HpwRewrite.VGUI:CreateLabel(text, x, y, parent)
 
 	return lab
 end
-
---[[
-function HpwRewrite.VGUI:OpenSwapMenu(name)
-	HpwRewrite.BM:LoadBinds(name)
-
-	local Dragging
-	local Waiting
-
-	local PosX = 0
-	local PosY = 0
-
-	local x = 5
-	local y = 29
-	local w, h = 86, 86
-
-	local win = self:CreateWindow(w * 9.7, h * 1.6)
-	win:SetTitle("Swap menu. Drag'n'Drop spells to change their positions")
-	win.lblTitle:SetFont("HPW_gui1")
-
-	local panels = { }
-
-	local function Load()
-		for k, v in pairs(panels) do if IsValid(v) then v:Remove() end end
-		table.Empty(panels)
-
-		for i = 1, 9 do
-			local x = x + (i - 1) * (w + 4)
-
-			local p = vgui.Create("Panel", win)
-			p:SetPos(x, y)
-			p:SetSize(w+16, h+16)
-
-			p.Index = i
-			p.Bind = HpwRewrite.BM.Binds[i]
-
-			local shift = 10
-			
-			p.Paint = function() end
-			p.PaintOver = function(p)
-				local spell, key
-
-				if p.Bind then
-					spell = p.Bind.Spell
-					key = p.Bind.Key
-				end
-
-				HpwRewrite:DrawSpellRect(spell, key, 8, 8, w, h)
-				
-				local w = w - 4
-				local h = h - 4
-				
-				local color
-
-				if p == Dragging then
-					color = Color(0, 0, 0, 200)
-				end
-
-				if Dragging and Waiting == p.Index then
-					color = Color(0, 255, 0, 100)
-				elseif Waiting == p.Index then
-					color = Color(0, 155, 255, 100)
-				end
-				
-				if color then 
-					draw.RoundedBox(6, shift, shift, w, h, color) 
-				end
-			end
-			
-			if p.Bind then
-				p.OnMousePressed = function(p, ms)
-					if ms == 107 then 
-						Dragging = p 
-						PosX, PosY = p:LocalCursorPos()
-					end
-				end
-			end
-
-			p.OnCursorEntered = function(p)
-				Waiting = p.Index
-			end
-
-			p.OnCursorExited = function(p)
-				Waiting = nil
-			end
-
-			table.insert(panels, p)
-		end
-	end
-
-	Load()
-
-	hook.Add("DrawOverlay", "hpwrewrite_dragndrophandler", function()
-		if not IsValid(win) then hook.Remove("DrawOverlay", "hpwrewrite_dragndrophandler") return end
-
-		if Dragging then
-			local x, y = gui.MouseX(), gui.MouseY()
-			x = x - PosX
-			y = y - PosY
-
-			HpwRewrite:DrawSpellRect(Dragging.Bind.Spell, Dragging.Bind.Key, x, y, w, h)
-		end
-	end)
-
-	win.OnCloseButton = function() hook.Remove("DrawOverlay", "hpwrewrite_dragndrophandler") end
-
-	local oldThink = win.Think
-	win.Think = function(win)
-		oldThink(win)
-
-		if Dragging then
-			if not input.IsMouseDown(107) then 
-				if Waiting then
-					HpwRewrite.BM:MoveBindTo(Dragging.Index, Waiting, name)
-					Load()
-				end
-
-				Dragging = nil 
-			end
-		end
-	end
-end]]
 
 local options = {
 	["Give and don't save to player's data file"] = function(ply, spell)
@@ -551,40 +423,18 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 	local win = self:CreateWindow(816, 600, true)
 	self.Window = win
 
-	local old = win.Paint
-	win.Paint = function(self, w, h)
-		old(self, w, h)
-		surface.SetDrawColor(HpwRewrite.Colors.DarkGrey)
-
-		local x = w - 228
-		surface.DrawLine(x, 0, x, h) -- Separating line
-	end
-
-	local desc = self:CreateScrollPanel(597, 33, 210, 559, win) -- That right info panel
-	local sheet = self:CreateSheet(0, 25, 588, 575)
+	local desc = self:CreateScrollPanel(597, 33, 210, 532, win) -- That right info panel
+	local sheet = self:CreateSheet(0, 25, 588, 548)
 
 	win.SpellWindow = desc
 	win.Sheet = sheet
-
-	--[[local old = win.PerformLayout
-	win.PerformLayout = function(win, w, h)
-		win.Sheet:SetSize(w - 212, h - 25)
-
-		win.SpellWindow:SetPos(w - 203, 33)
-		win.SpellWindow:SetSize(195, h - 41)
-
-		win.ProgressBar:SetSize(w - 25, 24)
-
-		win:SetupCloseButton()
-	end]]
-
 	sheet:SetFadeTime(0)
 
 	-- Spell learning aka skillz progress bar
 	do
 		local bar = vgui.Create("DProgress", win)
-		bar:SetPos(0, 0)
-		bar:SetSize(792, 24)
+		bar:SetPos(5, 570)
+		bar:SetSize(805, 25)
 
 		win.ProgressBar = bar
 
@@ -605,8 +455,8 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 		end
 
 		bar.Paint = function(self, w, h)
-			draw.RoundedBox(0, 0, 0, w, h, HpwRewrite.Colors.DarkGrey2)
-			draw.RoundedBox(0, 0, 0, w * self:GetFraction(), h, HpwRewrite.Colors.Blue)
+			draw.RoundedBox(0, 0, 0, w, h, HpwRewrite.Colors.DarkRed)
+			draw.RoundedBox(0, 0, 0, w * self:GetFraction(), h, Color(127, 7, 2, 255))
 		end
 	end
 
@@ -896,29 +746,13 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 		end
 	end
 
-	-- Adding tabs
-	local newspells
+	-- Adding tabs 
 	local spells
 	local skins = self:CreateScrollPanel()
 
 	local skinsButtons = { }
 
 	AddSpells = function()
-		-- Adding spell tree
-		if not newspells then
-			newspells = vgui.Create("HPWSpellTree", win)
-
-			newspells.CatchClick = function(newspells, name)
-				CreateInfoPanel(name)
-				if HpwRewrite:CanUseSpell(LocalPlayer(), name) and HpwRewrite.CVars.CloseOnSelect:GetBool() then win:Close() end
-
-				HpwRewrite:RequestSpell(name)
-			end
-		end
-
-		if newspells.Added then newspells:Update() end
-		newspells.Added = true
-
 		-- Adding spells with categories
 		if not spells then spells = self:CreateScrollPanel() end
 
@@ -949,18 +783,9 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 				btn.DoRightClick = btn.DoClick
 
 				btn:SetFont("HPW_gui3")
-				btn.MainColor = HpwRewrite.Colors.DarkGrey
-				btn.EnterColor = HpwRewrite.Colors.DarkGrey3
+				btn.MainColor = Color(134, 2, 4, 255)
+				btn.EnterColor = Color(84, 11, 13, 255)
 				btn.DoSound = false
-
-				local old = btn.Paint
-				btn.Paint = function(btn, w, h)
-					old(btn, w, h)
-					surface.SetMaterial(gradient)
-					surface.SetDrawColor(HpwRewrite.Colors.DarkGrey5)
-					surface.DrawTexturedRect(0, 0, w, 1)
-					surface.DrawTexturedRect(0, h - 1, w, 1)
-				end
 
 				spellCategory.MainButton = btn
 				spellCategory.OtherButtons = { }
@@ -1006,8 +831,8 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 					local learn = HpwRewrite:PlayerHasLearnableSpell(LocalPlayer(), a)
 
 					btn.DoRightClick = btn.DoClick
-					btn:SetColor(Color(0, 0, 0, 220))
-					btn.MainColor = learn and HpwRewrite.Colors.Green or HpwRewrite.Colors.DarkGrey5
+					btn:SetColor(Color(77, 77, 77, 220))
+					btn.MainColor = learn and HpwRewrite.Colors.Green or Color(28, 28, 28, 255)
 					btn.EnterColor = Color(btn.MainColor.r * 1.1, btn.MainColor.g * 1.1, btn.MainColor.b * 1.1)
 					btn.DoSound = false
 
@@ -1024,7 +849,7 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 			for name, spellCategory in SortedPairs(spells.SpellCats) do
 				local size = defaultSize+1
 				local numBtns = #spellCategory.OtherButtons
-				if not spellCategory.Hidden then size = size + numBtns * 25 end
+				if not spellCategory.Hidden then size = size + numBtns * 25 + 5 end
 
 				--local h = Lerp(RealFrameTime() * 12, spellCategory:GetTall(), size)
 				local h
@@ -1093,43 +918,6 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 		info.Paint = function() end
 
 		local sheet2 = self:CreateSheet(0, 0, sheetWidth, 530, info)
-
-		local faq = self:CreateScrollPanel()
-		local pos = 10
-
-		-- F.A.Q
-		if HpwRewrite.Manuals.FAQ then
-			self:CreateLabel(HpwRewrite.Language:GetWord("#faq_msg1"), 10, pos, faq):SetColor(HpwRewrite.Colors.LightBlue)
-			pos = pos + 50
-
-			local btn = self:CreateButton(HpwRewrite.Language:GetWord("#bugsthread"), 415, 13, 120, 24, faq, function() gui.OpenURL("https://github.com/Ayditor/HPW_Rewrite/issues") end)
-			local btn = self:CreateButton(HpwRewrite.Language:GetWord("#qathread"), 415, 38, 120, 24, faq, function() gui.OpenURL("http://steamcommunity.com/workshop/filedetails/discussion/875498456/135510393202106420") end)
-
-			for k, v in pairs(HpwRewrite.Manuals.FAQ) do
-				self:CreateLabel(string.rep("_", 75), 10, pos, faq):SetColor(HpwRewrite.Colors.DarkGrey3)
-				pos = pos + 30
-
-				self:CreateLabel("Q: ", 10, pos, faq):SetColor(Color(0, 150, 255))
-
-				local question = string.Explode("\n", v.Q)
-				for _, str in pairs(question) do
-					self:CreateLabel(str, 30, pos, faq)
-					pos = pos + 16
-				end
-
-				self:CreateLabel("A: ", 10, pos, faq):SetColor(Color(0, 150, 255))
-
-				local answer = string.Explode("\n", v.A)
-				for _, str in pairs(answer) do
-					self:CreateLabel(str, 30, pos, faq)
-					pos = pos + 16
-				end
-
-				pos = pos + 15
-			end
-
-			self:CreateLabel("", 10, pos, faq)
-		end
 
 		local help = self:CreateScrollPanel()
 
@@ -1227,55 +1015,6 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 			end)
 		end
 
-		-- License, stuff
-		local other = self:CreateScrollPanel()
-
-		local pos = 10
-		local lab = self:CreateLabel(HpwRewrite.Language:GetWord("#license"), 0, 0, other)
-		lab:SetColor(HpwRewrite.Colors.LightBlue)
-		lab:SetFont("HPW_gui2")
-		lab:SizeToContents()
-		lab:Dock(TOP)
-		lab:DockMargin(10, 5, 0, 10)
-
-		for k, v in pairs(string.Explode("\n", HpwRewrite.Manuals.License)) do
-			local t = self:CreateLabel(v, 0, 0, other)
-			t:Dock(TOP)
-			t:DockMargin(10, 0, 0, 0)
-		end
-
-		-- Bugs
-		local lab = self:CreateLabel(HpwRewrite.Language:GetWord("#knownbugs"), 0, 0, other)
-		lab:SetColor(HpwRewrite.Colors.LightBlue)
-		lab:SetFont("HPW_gui2")
-		lab:SizeToContents()
-		lab:Dock(TOP)
-		lab:DockMargin(10, 5, 0, 10)
-
-		for k, v in pairs(HpwRewrite.Manuals.KnownBugs) do
-			local t = self:CreateLabel(Format("• %s", v), 0, 0, other)
-			t:Dock(TOP)
-			t:DockMargin(10, 0, 0, 0)
-		end
-
-		-- Contributors
-		local lab = self:CreateLabel(HpwRewrite.Language:GetWord("#contributors"), 0, 0, other)
-		lab:SetColor(HpwRewrite.Colors.LightBlue)
-		lab:SetFont("HPW_gui2")
-		lab:SizeToContents()
-		lab:Dock(TOP)
-		lab:DockMargin(10, 5, 0, 10)
-
-		-- Don't remove this piece of code
-		for k, v in SortedPairs(HpwRewrite.Manuals.Contributors) do
-			local t = self:CreateButton(k, 0, 0, 100, 20, other, function()
-				gui.OpenURL(v)
-			end)
-
-			t:Dock(TOP)
-			t:DockMargin(0, 1, 0, 0)
-		end
-
 		-- Client settings
 		local clientset = HpwRewrite.Language:GetWord("#clientsettings")
 		local clientopt = self:CreateScrollPanel()
@@ -1327,16 +1066,14 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 			count = count + 1
 		end
 
-		sheet2:AddSheet(HpwRewrite.Language:GetWord("#faq"), faq)--, "icon16/information.png")
 		sheet2:AddSheet(HpwRewrite.Language:GetWord("#helpstuff"), help)--, "icon16/cog.png")
-		sheet2:AddSheet(HpwRewrite.Language:GetWord("#maininfo"), other)--, "icon16/book.png")
 		sheet2:AddSheet(clientset, clientopt)--, "icon16/cog_edit.png")
 		if (HpwRewrite.CheckAdmin(LocalPlayer())) then
 			sheet2:AddSheet(serverset, serveropt)--, "icon16/cog_edit.png")
 		end
 		sheet2:AddSheet(HpwRewrite.Language:GetWord("#listcvar"), cvarList)--, "icon16/script_gear.png")
 
-		self:SetupSheetDrawing(sheet2, HpwRewrite.Colors.DarkGrey5)
+		self:SetupSheetDrawing(sheet2, HpwRewrite.Colors.DarkGrey)
 	end
 
 	-- Binding GUI
@@ -1959,10 +1696,6 @@ function HpwRewrite.VGUI:OpenNewSpellManager()
 		sheet2:AddSheet(HpwRewrite.Language:GetWord("#manager"), spells, "icon16/report_edit.png")
 	end
 	self:SetupSheetDrawing(sheet2, HpwRewrite.Colors.DarkGrey5)
-	
-	if not HpwRewrite.CVars.HideTree:GetBool() then
-		sheet:AddSheet(HpwRewrite.Language:GetWord("#maintree"), newspells)
-	end
 	
 	sheet:AddSheet(HpwRewrite.Language:GetWord("#spelllist"), spells)
 	sheet:AddSheet(HpwRewrite.Language:GetWord("#wandskins"), skins)
